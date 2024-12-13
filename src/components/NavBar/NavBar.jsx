@@ -1,6 +1,10 @@
+
+import { useContext } from 'react'; // import useContext to grab the context
+import { AuthedUserContext } from '../../App'; // import the AuthedUserContext
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ user, handleSignout }) => {
+const NavBar = ({  handleSignout }) => {
+    const user = useContext(AuthedUserContext); // set the value of user to the imported useContext hook bringing in the value from AuthedUserContext
     return (
       <>
         { user ? (
